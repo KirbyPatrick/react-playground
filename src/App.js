@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { Component } from 'react';
+import './App.css';
+import DisplayState from './components/DisplayState';
+
+class App extends Component {
+  //my state exists in the parent component of App.js, but needs to be used in DisplayState.js.
+  state = {
+    name: "It worked!!!",
+    age: null,
+    height: null,
+    hobbies: []
+  };
+
+  render() {
+    return (
+      <div>
+        <DisplayState
+          //by defining properties and assigining them to values of the state, we're passing the state values to DisplayState.js to be accepted as props
+          name={this.state.name}
+          age={this.state.age}
+          height={this.state.height}
+          hobbies={this.state.hobbies}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
