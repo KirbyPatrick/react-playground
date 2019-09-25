@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 class ChangeState extends Component {
 
-  sendData = () => {
-    this.props.parentCallback("hi")
+  sendData = e => {
+    this.props.parentCallback(e.target.value)
   }
 
-
   render() {
-    console.log("this on ChangeState.js", this);
     return (
-      <div>
-        <input type="text" name="name" id="myTextInput" />
-        <button onClick={this.sendData}>Click to send data from child to parent component</button>
+      <div className="boxyRed">
+        <form action="">
+          <label htmlFor="">Set Name: </label>
+          <input onChange={this.sendData} type="text" name="name" id="myTextInput" />
+        </form>
       </div>
     );
   }
