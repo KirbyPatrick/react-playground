@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 class DisplayState extends Component {
   render() {
-    console.log(this.props);
     return (
-      <div>
+      <div className="boxyBlue">
+        <i>DisplayState.js</i>
         <p>State is equal to:</p>
         <ul>
           <li>Name: {this.props.name}</li>
-          <li>Age: "Nothing Yet"</li>
-          <li>Height: "Nothing Yet"</li>
-          <li>Hobbies: "Nothing Yet"</li>
-          <li>Item 5: "Nothing Yet"</li>
+          <li>Age: {this.props.age}</li>
+          <li>Height: {this.props.height}</li>
+          <li>Hobbies: {this.props.hobbies}</li>
+          <li>Favorite color: {this.props.color}</li>
         </ul>
       </div>
     );
